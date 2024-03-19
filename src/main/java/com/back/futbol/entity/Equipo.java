@@ -13,6 +13,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "equipos")
 public class Equipo {
 
     @Id
@@ -24,6 +25,6 @@ public class Equipo {
     private String city;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "jugador_id")
+    @JoinColumn(name = "equipo_id")
     private Set<Jugador> jugadores;
 }
