@@ -6,26 +6,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "equipos")
-public class Equipo {
-
+@Table(name = "direcciones")
+public class Direccion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-
-    private String city;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "equipo_id")
-    private Set<Jugador> jugadores = new HashSet<>();
+    private String nombre;
+    private Integer numero;
 }

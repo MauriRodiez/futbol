@@ -359,3 +359,11 @@ Wrong user name or password [28000-224]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 50 more
+2024-03-19 11:54:23.310581-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "DIRECCINOES" no encontrada
+Table "DIRECCINOES" not found; SQL statement:
+select * from direccinoes [42102-224]
+2024-03-19 12:19:12.201368-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "EQUIPOSEQUIPO_ID" no encontrada
+Table "EQUIPOSEQUIPO_ID" not found; SQL statement:
+select * from equiposEQUIPO_ID EQUIPO_ID [42102-224]

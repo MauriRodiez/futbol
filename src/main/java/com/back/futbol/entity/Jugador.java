@@ -22,5 +22,8 @@ public class Jugador {
     private String position;
 
     private int number;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "direccion_id", referencedColumnName = "id")
+    private Direccion direccion;
 
 }
