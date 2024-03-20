@@ -1,5 +1,6 @@
 package com.back.futbol.service.impl;
 
+import com.back.futbol.dto.JugadorDTO;
 import com.back.futbol.entity.Jugador;
 import com.back.futbol.repository.IjugadorRepository;
 import com.back.futbol.service.IjugadorService;
@@ -23,13 +24,13 @@ public class jugadorService implements IjugadorService {
     }
 
     @Override
-    public List<Jugador> listarTodos() {
+    public List<JugadorDTO> listarTodos() {
         return jugadorRepository.findAll();
     }
 
     @Override
-    public Jugador buscarPorId(Long id) {
-        Optional<Jugador> jugadorOpcional = jugadorRepository.findById(id);
+    public JugadorDTO buscarPorId(Long id) {
+        Optional<JugadorDTO> jugadorOpcional = jugadorRepository.findById(id);
         if(jugadorOpcional.isPresent()){
             return jugadorOpcional.get();
         } else {
@@ -38,13 +39,13 @@ public class jugadorService implements IjugadorService {
     }
 
     @Override
-    public void actualizar(Jugador jugador) {
-        jugadorRepository.save(jugador);
+    public void actualizar(JugadorDTO jugadorDTO) {
+        jugadorRepository.save(jugadorDTO);
     }
 
     @Override
     public String eliminar(Long id) {
-        Jugador seleccionado = buscarPorId(id);
+        JugadorDTO seleccionado = buscarPorId(id);
         if(seleccionado != null){
             jugadorRepository.deleteById(id);
             return "El jugador "+ id + " ha sido eliminado";
